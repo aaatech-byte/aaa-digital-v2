@@ -396,7 +396,7 @@ const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="pb-14 pt-5 bg-primary">
+    <section id="services" className="pb-12 pt-7 bg-gradient-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white mb-4">
@@ -408,7 +408,7 @@ const Services: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {services.map((service, index) => (
             <div
               key={index}
@@ -451,12 +451,12 @@ const Services: React.FC = () => {
               <div className="flex items-center justify-center mb-4">
                 <modalService.icon className="h-12 w-12 text-primary" />
               </div>
-              <h3 className="text-3xl font-bold text-gray-700 my-2">{modalService.title}</h3>
-              <p className="text-gray-400 my-4 text-sm">{modalService.description}</p>
-              <ul className="text-left text-gray-800 space-y-3 pt-4">
+              <h3 className="text-3xl font-bold text-primary my-2">{modalService.title}</h3>
+              <p className="text-primary font-semibold my-4 text-sm">{modalService.description}</p>
+              <ul className="text-left text-primary space-y-3 pt-4">
                 {[modalService.li1, modalService.li2, modalService.li3, modalService.li4, modalService.li5].map((item, index) => (
-                  <li key={index} className="flex items-center font-semibold">
-                    <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                  <li key={index} className="flex items-center">
+                    <span className="w-2 h-2 bg-primary font-medium rounded-full mr-2"></span>
                     {item}
                   </li>
                 ))}

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
-import { Button } from "./ui/Button";
 import "swiper/css/effect-cube";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -160,70 +159,74 @@ export default function Testimonials() {
 
   const filteredTestimonials = selectedCategory
     ? testimonials.filter(
-        (testimonial) => testimonial.category === selectedCategory
-      )
+      (testimonial) => testimonial.category === selectedCategory
+    )
     : testimonials;
 
   return (
-    <main className="mx-2 sm:mx-10 py-7 rounded-2xl bg-cover relative">
-      <div className="text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 my-2">
-          What Our <span className="text-primary">Clients Say</span>
-        </h2>
-        <p className="text-xl my-2 text-gray-600 max-w-2xl mx-auto">
-          Don't just take our word for it - hear from some of our satisfied
-          clients.
-        </p>
-        <div className="flex justify-center items-center flex-wrap flex-1">
-          {categories.map((category) => (
-            <span
-              key={category}
-              className="bg-white mx-auto w-fit relative leading-8 no-underline group mt-6 text-gray-600 hover:text-emerald-500 hover:font-bold font-semibold translate-y-0 cursor-pointer duration-150 transition scale-95"
-              onClick={() => handleCategoryClick(category)}
-            >
-              <span className="text-md font-bold">{category}</span>
-              <span className="absolute bottom-[-0.25rem] right-0 h-[2px] w-0 bg-emerald-500 rounded transition-all duration-400 ease-linear group-hover:w-full group-hover:left-0"></span>
-            </span>
-          ))}
-        </div>
-      </div>
+    <main className=" bg-cover relative bg-gradient-primary">
+      <section className="mx-2 sm:mx-10 py-7">
 
-      <section className="w-full z-[400] container mx-auto px-4 py-14">
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          loop={true}
-          autoplay={{
-            delay: 1500,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
-          effect="cube"
-          cubeEffect={{
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94,
-          }}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-            },
-            740: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {filteredTestimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <TestimonialsCard testimonial={testimonial} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 my-2">
+            What Our <span className="text-primary">Clients Say</span>
+          </h2>
+          <p className="text-xl my-2 text-gray-600 max-w-2xl mx-auto">
+            Don't just take our word for it - hear from some of our satisfied
+            clients.
+          </p>
+          <div className="flex justify-center items-center flex-wrap flex-1">
+            {categories.map((category) => (
+              <span
+                key={category}
+                className="mx-auto w-fit relative leading-8 no-underline group mt-6 text-white hover:text-yellow hover:font-bold font-semibold translate-y-0 cursor-pointer duration-150 transition scale-95"
+                onClick={() => handleCategoryClick(category)}
+              >
+                <span className="text-md font-bold">{category}</span>
+                <span className="absolute bottom-[-0.25rem] right-0 h-[2px] w-0 bg-emerald-500 rounded transition-all duration-400 ease-linear group-hover:w-full group-hover:left-0"></span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+
+        <div className="w-full z-[400] container mx-auto px-4 py-14">
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            loop={true}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+            effect="cube"
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 20,
+              shadowScale: 0.94,
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              740: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+            {filteredTestimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <TestimonialsCard testimonial={testimonial} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </section>
     </main>
   );
@@ -231,9 +234,9 @@ export default function Testimonials() {
 
 const TestimonialsCard = ({ testimonial }) => {
   return (
-    <section className="bg-white">
+    <section className="">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gray-50 rounded-xl p-3 sm:p-6 h-full sm:h-[21rem] mb-2 shadow-lg">
+        <div className="bg-gradient-secondary rounded-xl p-3 sm:p-6 h-full sm:h-[21rem] mb-2 shadow-lg">
           <div className="flex items-center mb-4">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} className="h-5 w-5 text-yellow-400" />
