@@ -3,11 +3,22 @@ import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/Button";
 
-function FeaturedWork() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [expandedProject, setExpandedProject] = useState(null);
+interface Project {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  features: string[];
+  challenge: string;
+  solution: string;
+  result: string;
+  technologiesUsed: string;
+}
 
-  const [initialProjects] = useState([
+const FeaturedWork: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  const [initialProjects] = useState<Project[]>([
     {
       title: "E-Commerce Website for MountWorks Outdoors",
       category: "Web Development",
@@ -218,7 +229,7 @@ function FeaturedWork() {
 
   const navigate = useNavigate();
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);
   };
 
@@ -230,90 +241,68 @@ function FeaturedWork() {
     navigate("/work");
   };
 
-
   return (
-    <>
-      <main className="bg-primary">
-        <section className="container max-7xl mx-auto p-4 ">
-          <div>
-            <div className="text-center mb-8">
-              <h2 className=" text-3xl md:text-4xl font-bold text-white mb-4">
-                Featured <span className="text-yellow">Projects</span>
-              </h2>
-              <p className="text-xl text-white max-w-4xl mx-auto">
-                Take a look at our recent work, showcasing how we've helped
-                businesses unlock their potential and achieve their digital
-                goals with cutting-edge solutions.
-              </p>
-            </div>
+    <main className="bg-gradient-primary">
+      <section className="container max-7xl mx-auto p-4">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Featured <span className="text-yellow">Projects</span>
+          </h2>
+          <p className="text-xl text-white max-w-4xl mx-auto">
+            Take a look at our recent work, showcasing how we've helped businesses...
+          </p>
+        </div>
 
-            <div className=" flex flex-wrap justify-center items-center gap-2 ">
-              {categories.map((category) => (
-                <div
-                  key={category}
-                  className="bg-white rounded-2xl shadow-md p-1 sm:p-3 text-gray-500 hover:text-primary hover:font-bold font-semibold translate-y-0 cursor-pointer hover:shadow-xl duration-200 transition hover:scale-100 scale-95"
-                  onClick={() => handleCategoryClick(category)}
-                >
-                  <h2 className="text-xs sm:text-sm ">{category}</h2>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-8 max-w-6xl mx-auto">
-            {selectedCategory && (
-              <h2 className="text-2xl text-yellow font-bold mb-4">{selectedCategory}</h2>
-            )}
-
-
-
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" 
-            onClick={() => handleViewAllClick()}
+        <div className="flex flex-wrap justify-center items-center gap-2">
+          {categories.map((category) => (
+            <div
+              key={category}
+              className="bg-white rounded-2xl shadow-md p-1 sm:p-3 text-gray-500 hover:text-primary hover:font-bold font-semibold cursor-pointer hover:shadow-xl transition hover:scale-100 scale-95"
+              onClick={() => handleCategoryClick(category)}
             >
-              {filteredProjects.map((project, index) => (
-                <div
-                  key={index}
-                  className=" rounded-xl overflow-hidden  transition translate-y-0 cursor-pointer scale-95 duration-300 hover:scale-100 hover:-translate-y-2"
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full rounded-2xl h-60"
-                  />
-                  <div className="py-4">
-                    <span className="bg-gradient-to-br from-[#13072E] to-[#3D1794] px-3 py-1 text-xs text-white font-bold rounded-full uppercase">
-                      {project.category}
-                    </span>
-                    <h3 className="text-xl font-bold text-white mt-2 mb-3">
-                      {project.title}
-                    </h3>
-                     <p className="text-gray-300 mb-1">
-                      { project.description}
-                     </p>
-                  </div>
-                </div>
-              ))}
+              <h2 className="text-xs sm:text-sm">{category}</h2>
             </div>
+          ))}
+        </div>
 
-            {selectedCategory && (
-              <div className="text-center mt-12">
-                <Button
-                  variant="primary"
-                  size="md"
-                  className="group px-3 py-2"
-                  onClick={() => handleViewAllClick()}
-                >
-                  View All Projects
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+        <div className="mt-8 max-w-6xl mx-auto">
+          {selectedCategory && <h2 className="text-2xl text-yellow font-bold mb-4">{selectedCategory}</h2>}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" onClick={handleViewAllClick}>
+            {filteredProjects.map((project, index) => (
+              <div
+                key={index}
+                className="rounded-xl overflow-hidden transition cursor-pointer scale-95 duration-300 hover:scale-100 hover:-translate-y-2"
+              >
+                <img src={project.image} alt={project.title} className="w-full rounded-2xl h-60" />
+                <div className="py-4">
+                  <span className="bg-gradient-to-br from-[#13072E] to-[#3D1794] px-3 py-1 text-xs text-white font-bold rounded-full uppercase">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl font-bold text-white mt-2 mb-3">{project.title}</h3>
+                  <p className="text-gray-300 mb-1">{project.description}</p>
+                </div>
               </div>
-            )}
+            ))}
           </div>
-        </section>
-      </main>
-    </>
+
+          {selectedCategory && (
+            <div className="text-center mt-12">
+              <Button
+                variant="primary"
+                size="md"
+                className="group px-3 py-2 hover:border-2 border-white"
+                onClick={handleViewAllClick}
+              >
+                View All Projects
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform " />
+              </Button>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
   );
-}
+};
 
 export default FeaturedWork;

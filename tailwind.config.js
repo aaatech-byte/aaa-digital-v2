@@ -10,6 +10,7 @@
         },
         backgroundImage: {
           'gradient-primary': 'linear-gradient(to right, #13072E, #3D1794)',
+          'gradient-secondary': 'linear-gradient(to right, #3D1794, #13072E)',
         },
         fontFamily: {
           orbitron: ['Orbitron', 'sans-serif'],
