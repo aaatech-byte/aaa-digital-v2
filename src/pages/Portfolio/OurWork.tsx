@@ -227,12 +227,7 @@ export default function OurWork() {
     setSelectedProject(null);
   };
 
-    const navigate = useNavigate();
-    const handleNavigation = (path: string) => {
-      navigate(path);
-      window.scrollTo(0, 0);
-    };
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -252,15 +247,15 @@ export default function OurWork() {
   }, []);
 
   return (
-    <main>
-      <section className="relative h-[95vh] bg-white bg-[url('https://png.pngtree.com/thumb_back/fh260/background/20230801/pngtree-top-tips-to-make-money-blogging-image_12958761.jpg')] bg-center bg-cover">
-        <div className="absolute  bg-gray-100 w-[100%] h-[95vh] opacity-60"></div>
+    <main className="bg-gradient-primary">
+      <section className="relative h-[95vh]  bg-[url('https://png.pngtree.com/thumb_back/fh260/background/20230801/pngtree-top-tips-to-make-money-blogging-image_12958761.jpg')] bg-center bg-cover">
+        <div className="absolute bg-primary z-10 w-[100%] h-[95vh] opacity-80"></div>
         <div className="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-22 md:py-24 ">
-          <div className="text-center pt-32">
-            <h1 className="mt-4 text-3xl md:text-6xl font-bold text-gray-800 mb-6">
-              Projects We've <span className="text-primary">Delivered</span>
+          <div className="text-center pt-32 ">
+            <h1 className="mt-4 text-2xl md:text-5xl font-bold text-white mb-6 font-orbitron">
+              Projects We've <span className="text-yellow ">Delivered</span>
             </h1>
-            <p className="text-lg text-gray-600 mb-8 max-w-xl py-2 mx-auto">
+            <p className="text-base sm:text-lg text-white mb-8 max-w-2xl py-2 mx-auto">
               Explore our recent projects to discover how we've empowered
               businesses to achieve their digital goals, enhance their online
               presence, and drive long-term growth.
@@ -268,7 +263,7 @@ export default function OurWork() {
             <Button
                 variant="primary"
                 size="md"
-                className="group"
+                className="group px-4 py-3 font-bold"
                 onClick={() => navigate("/contact")}
               >
                 Let's Get Started
@@ -276,51 +271,52 @@ export default function OurWork() {
               </Button>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent"></div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* <h2 className="mb-12 w-fit inline-block text-gray-800 text-3xl sm:text-4xl md:text-6xl font-bold tracking-wide uppercase">
             Our <span className="text-primary">Work</span>
           </h2> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 cursor-pointer"
+                className="relative  rounded-xl overflow-hidden shadow-xl scale-95 hover:-translate-y-2  hover:shadow-2xl transition cursor-pointer"
                 onClick={() => handleCaseStudyClick(project)}
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-48 object-cover hover:scale-105 duration-300 ease-in-out" 
                 />
-                <div className="flex justify-between flex-col">
+                <div className="flex flex-col">
                   <div className="p-6">
-                    <span className="text-primary my-3 font-semibold">
+                    <span 
+                   className="bg-gradient-to-br from-[#13072E] to-[#3D1794] px-3 py-1 text-xs text-white font-bold rounded-full uppercase">
                       {project.category}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-900 my-3">
+                    <h3 className="text-xl font-bold text-gray-50 my-3 font-orbitron">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 my-3">
+                    <p className="text-gray-200 my-3">
                       {truncateDescription(project.description, 18)}
                       {/* Button to show more details */}
                       <button
                         className=" text-black font-semibold"
                         onClick={() => setSelectedProject(project)}
                       >
-                        <span className="text-primary font-bold text-xl">
+                        <span className="text-gray-200 font-bold text-xl">
                           ..... {" "}
                         </span>
                       </button>
                     </p>
                   </div>
-                  <code className="text-gray-600 text-sm sticky p-6 bottom-0">
+                  <code className="text-gray-50 text-sm font-medium sticky p-6 bottom-0">
                     Technologies:
                     <br />
-                    <span className="text-primary font-semibold">
+                    <span className="text-yellow font-semibold">
                       {project.technologiesUsed}
                     </span>
                   </code>
@@ -342,13 +338,13 @@ export default function OurWork() {
               alt={selectedProject.title}
               className="w-full h-40 object-cover rounded-md mb-4"
             /> */}
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">
+            <h3 className="text-2xl font-bold text-primary font-orbitron mb-3">
               {selectedProject.title}
             </h3>
-            <p className="text-gray-600 mb-4">{selectedProject.description}</p>
+            <p className="text-primary mb-4">{selectedProject.description}</p>
             <ul className="text-left text-gray-800 space-y-2">
               {selectedProject.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center">
+                <li key={idx} className="flex items-center text-primary">
                   <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
                   {feature}
                 </li>
@@ -356,20 +352,21 @@ export default function OurWork() {
             </ul>
 
             <div className="mt-6">
-              <h4 className="text-gray-800 font-semibold">Challenge</h4>
-              <p className="text-gray-600">{selectedProject.challenge}</p>
+              <h4 className="font-bold text-primary font-orbitron">Challenge</h4>
+              <p className="text-primary">{selectedProject.challenge}</p>
             </div>
             <div className="mt-4">
-              <h4 className="text-gray-800 font-semibold">Solution</h4>
-              <p className="text-gray-600">{selectedProject.solution}</p>
+              <h4 className="font-bold text-primary font-orbitron">Solution</h4>
+              <p className="text-primary">{selectedProject.solution}</p>
             </div>
             <div className="mt-4">
-              <h4 className="text-gray-800 font-semibold">Result</h4>
-              <p className="text-gray-600">{selectedProject.result}</p>
+              <h4 className="font-bold text-primary font-orbitron">Result</h4>
+              <p className="text-primary">{selectedProject.result}</p>
             </div>
 
-            <p className="text-gray-500 mt-4">
-              Technologies Used: {selectedProject.technologiesUsed}
+            <p className="text-gray-800 font-semibold mt-4">
+              <span className="font-bold text-primary font-orbitron">Technologies Used</span> <br />
+              {selectedProject.technologiesUsed}
             </p>
             <button
               onClick={handleCloseModal}

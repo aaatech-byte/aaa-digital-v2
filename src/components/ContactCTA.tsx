@@ -50,7 +50,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-white py-7 flex items-center justify-center">
+    <section className=" py-7 flex items-center justify-center">
       <div className="min-w-6xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">

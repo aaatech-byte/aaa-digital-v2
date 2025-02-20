@@ -1,14 +1,20 @@
-import { useState } from "react";
 import { Star } from "lucide-react";
-import "swiper/css/effect-cube";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-// Testimonial Data
-const testimonials = [
+// Define Testimonial Type
+interface Testimonial {
+  name: string;
+  role: string;
+  content: string;
+  image: string;
+  category: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     name: "Emily R.",
     role: "CEO, LearnSphere Inc.",
@@ -137,90 +143,34 @@ const testimonials = [
   },
 ];
 
-const categories = [
-  "Web Development",
-  "Mobile App Development",
-  "E-Commerce Solutions",
-  "SEO & Digital Marketing",
-  "Performance Optimization",
-  "UI/UX Design",
-];
-
 export default function Testimonials() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-  };
-
-  const handleViewAllClick = () => {
-    setSelectedCategory(null);
-  };
-
-  const filteredTestimonials = selectedCategory
-    ? testimonials.filter(
-      (testimonial) => testimonial.category === selectedCategory
-    )
-    : testimonials;
 
   return (
-    <main className=" bg-cover relative bg-gradient-primary">
+    <main className="bg-cover relative bg-gradient-primary">
       <section className="mx-2 sm:mx-10 py-7">
-
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 my-2">
-            What Our <span className="text-primary">Clients Say</span>
+          <h2 className="text-3xl md:text-4xl text-white font-bold font-orbitron">
+            What Our <span className="text-yellow">Clients Say</span>
           </h2>
-          <p className="text-xl my-2 text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from some of our satisfied
-            clients.
+          <p className="text-xl mt-4 font-semibold text-gray-50 max-w-2xl mx-auto">
+            Don't just take our word for it - hear from some of our satisfied clients.
           </p>
-          <div className="flex justify-center items-center flex-wrap flex-1">
-            {categories.map((category) => (
-              <span
-                key={category}
-                className="mx-auto w-fit relative leading-8 no-underline group mt-6 text-white hover:text-yellow hover:font-bold font-semibold translate-y-0 cursor-pointer duration-150 transition scale-95"
-                onClick={() => handleCategoryClick(category)}
-              >
-                <span className="text-md font-bold">{category}</span>
-                <span className="absolute bottom-[-0.25rem] right-0 h-[2px] w-0 bg-emerald-500 rounded transition-all duration-400 ease-linear group-hover:w-full group-hover:left-0"></span>
-              </span>
-            ))}
-          </div>
         </div>
 
-
-        <div className="w-full z-[400] container mx-auto px-4 py-14">
+        <div className="w-full container mx-auto px-4 py-14">
           <Swiper
             spaceBetween={30}
-            centeredSlides={true}
-            loop={true}
-            autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
-            }}
+            centeredSlides
+            loop
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper"
-            effect="cube"
-            cubeEffect={{
-              shadow: true,
-              slideShadows: true,
-              shadowOffset: 20,
-              shadowScale: 0.94,
-            }}
             breakpoints={{
-              320: {
-                slidesPerView: 1,
-              },
-              740: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
+              320: { slidesPerView: 1 },
+              740: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
           >
-            {filteredTestimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
                 <TestimonialsCard testimonial={testimonial} />
               </SwiperSlide>
@@ -232,33 +182,31 @@ export default function Testimonials() {
   );
 }
 
-const TestimonialsCard = ({ testimonial }) => {
+interface TestimonialsCardProps {
+  testimonial: Testimonial;
+}
+
+const TestimonialsCard: React.FC<TestimonialsCardProps> = ({ testimonial }) => {
   return (
-    <section className="">
+    <section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-secondary rounded-xl p-3 sm:p-6 h-full sm:h-[21rem] mb-2 shadow-lg">
+        <div className="gradient-primary rounded-xl p-3 sm:p-6 h-full sm:h-[21rem] shadow-lg">
           <div className="flex items-center mb-4">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="h-5 w-5 text-yellow-400" />
+              <Star key={i} className="h-5 w-5 text-yellow" />
             ))}
           </div>
-          <p className="text-gray-600 text-base pt-3 pb-6">
-            {testimonial.content}
-          </p>
-          <div className="flex items-center pt-3">
+          <p className="text-gray-200 text-left text-base pt-3 pb-6">{testimonial.content}</p>
+          <div className="flex items-center text-left pt-3">
             <img
               src={testimonial.image}
               alt={testimonial.name}
               className="w-12 h-12 rounded-full object-cover mr-4"
             />
             <div>
-              <code className="font-semibold text-gray-900">
-                {testimonial.name}
-              </code>
+              <code className="font-semibold text-white">{testimonial.name}</code>
               <div>
-                <code className="text-gray-600 text-sm">
-                  {testimonial.role}
-                </code>
+                <code className="text-white text-sm">{testimonial.role}</code>
               </div>
             </div>
           </div>

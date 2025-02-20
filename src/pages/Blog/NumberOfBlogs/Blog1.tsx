@@ -43,10 +43,10 @@ const Blog1 = () => {
       <main className="max-w-4xl m-auto pt-24 pb-10">
         <div className="flex justify-between items-center">
           {/* <span className="bg-primary text-white font-bold text-sm px-3 py-2 cursor-pointer shadow-md hover:shadow-lg rounded-2xl ">{post.category}</span> */}
-          {/* <p className="text-primary font-bold text-xl cursor-pointer rounded-2xl ">
+          {/* <p className="text-white font-bold text-xl cursor-pointer rounded-2xl ">
             {post.category}
           </p> */}
-          <p className="text-gray-400 text-xl font-semibold italic">
+          <p className="text-gray-200 text-xl font-semibold italic">
             {post.publishDate}
           </p>
         </div>
@@ -56,81 +56,81 @@ const Blog1 = () => {
         <img className="w-full rounded-2xl" src={post.image} alt={post.title} />
 
         <div className="descriptions py-3 px-4">
-          <p className="text-primary font-bold pt-5 text-2xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-2xl leading-9 tracking-wide">
             {post.desc_h1}
           </p>
-          <p className="text-gray-800  text-lg leadiang-9 tracking-wide">
+          <p className="text-gray-200  text-lg leadiang-9 tracking-wide">
             {post.desc_p1}
           </p>
-          <p className="text-primary font-bold pt-5 text-2xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-2xl leading-9 tracking-wide">
             {post.desc_h2}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h3}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p2}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h4}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p3}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h5}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p4}
           </p>
-          <p className="text-primary font-bold pt-5 text-2xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-2xl leading-9 tracking-wide">
             {post.desc_h6}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h7}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p5}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h8}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p6}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h9}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide"></p>
+          <p className="text-gray-200 text-lg leading-9 tracking-wide"></p>
           {post.desc_p7}
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h10}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p8}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h11}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p9}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h12}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p10}
           </p>
-          <p className="text-primary font-bold pt-5 text-xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-xl leading-9 tracking-wide">
             {post.desc_h13}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p11}
           </p>
-          <p className="text-primary font-bold pt-5 text-2xl leading-9 tracking-wide">
+          <p className="text-white font-bold pt-5 text-2xl leading-9 tracking-wide">
             {post.desc_h14}
           </p>
-          <p className="text-gray-800 text-lg leading-9 tracking-wide">
+          <p className="text-gray-200 text-lg leading-9 tracking-wide">
             {post.desc_p12}
           </p>
         </div>

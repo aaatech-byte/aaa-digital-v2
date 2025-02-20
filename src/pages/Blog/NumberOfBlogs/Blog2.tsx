@@ -70,7 +70,7 @@ const Blog2 = () => {
       </div>
 
       <h1 className="font-bold py-5 font-serif text-4xl">{post.title}</h1>
-
+zzz
       <img
         className="w-full object-cover rounded-3xl"
         src={post.image}
