@@ -1,4 +1,3 @@
-import { Star } from "lucide-react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -148,12 +147,12 @@ export default function Testimonials() {
   return (
     <main className="bg-cover relative bg-gradient-primary">
       <section className="mx-2 sm:mx-10 py-7">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl text-white font-bold font-orbitron">
-            What Our <span className="text-yellow">Clients Say</span>
+      <div className="text-center">
+          <h2 className="mt-4 text-2xl md:text-5xl font-orbitron font-semibold text-white mb-4">
+          What Our <span className="text-yellow">Clients Say</span>
           </h2>
-          <p className="text-xl mt-4 font-semibold text-gray-50 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from some of our satisfied clients.
+          <p className="text-base sm:textlg text-[#FFFFFF] max-w-3xl mx-auto">
+          Don't just take our word for it - hear from some of our satisfied clients.
           </p>
         </div>
 
@@ -191,9 +190,9 @@ const TestimonialsCard: React.FC<TestimonialsCardProps> = ({ testimonial }) => {
     <section>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="gradient-primary rounded-xl p-3 sm:p-6 h-full sm:h-[21rem] shadow-lg">
-          <div className="flex items-center mb-4">
+          <div className="flex items-center mb-4 gap-1">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="h-5 w-5 text-yellow" />
+              <img src="/icons/star.png" className="w-6" alt="" />
             ))}
           </div>
           <p className="text-gray-200 text-left text-base pt-3 pb-6">{testimonial.content}</p>

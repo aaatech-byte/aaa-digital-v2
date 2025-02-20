@@ -35,9 +35,9 @@ type FooterData = {
 };
 
 const footerData: FooterData = {
-  logoSrc: "/icons/aaa_logo.png",
+  logoSrc: "/icons/aaa_logo.png", 
   description:
-    "Revolutionizing your business with bold, innovative digital solutions that drive exponential growth, ignite operational efficiency, and unlock limitless potential—empowering you to thrive in an ever-evolving digital world.",
+    "Revolutionize your business with bold digital solutions that drive growth, enhance efficiency, and unlock limitless potential in the evolving digital landscape.",
   socialLinks: [
     {
       name: "LinkedIn",
@@ -88,8 +88,8 @@ export default function Footer() {
 
   return (
     <footer className="gradient-primary text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {/* Logo & Description */}
           <div>
             <img
@@ -185,7 +185,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="text-center text-gray-400">
             <p>
-              &copy; {new Date().getFullYear()} AAA Digital, All rights
+              &copy;2024- {new Date().getFullYear()} AAA Digital, All rights
               reserved.
             </p>
           </div>

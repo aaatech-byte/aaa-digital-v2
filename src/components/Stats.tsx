@@ -42,14 +42,14 @@ const StatItem: React.FC<StatItemProps> = ({ number, label, suffix = "" }) => {
 
   return (
     <div ref={ref}>
-      <div className="text-3xl md:text-4xl font-bold font-orbitron text-yellow">
+      <div className="text-3xl md:text-4xl  font-orbitron text-yellow">
         {inView ? (
           <CountUp end={number} suffix={suffix} duration={5} />
         ) : (
           <span className="text-white">0{suffix}</span>
         )}
       </div>
-      <div className="text-white mt-3 text-xl font-bold">{label}</div>
+      <div className="text-white mt-3 text-xl font-semibold">{label}</div>
     </div>
   );
 };
