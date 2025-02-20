@@ -10,12 +10,12 @@ const team = [
   {
     name: "Muhammad Haseeb Abbas",
     position: "Managing Director",
-    image: "src/assets/images/haseeb.jpeg",
+    image: "/images/haseeb.jpeg",
   },
   {
     name: "Junaid Khan",
     position: "Head of Marketing",
-    image: "junaid.jpeg",
+    image: "/images/junaid.jpeg",
   },
   // {
   //   name: "Muhammad Jamshed",
@@ -25,7 +25,7 @@ const team = [
   {
     name: "Rishaeel zai",
     position: "Creative Director",
-    image: "src/assets/images/raseel2.jpeg",
+    image: "/images/raseel2.jpeg",
   },
 
   // {
@@ -39,11 +39,11 @@ const team = [
 const TeamSec = () => {
   return (
     <>
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Our <span className="text-primary">Team</span>
+      <section className="py-20 bg-gradient-primary">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-[#FFFFFF] font-orbitron md:text-4xl">
+              Meet Our <span className="text-yellow">Team</span>
             </h2>
           </div>
           <Grid container spacing={4}>
@@ -62,7 +62,7 @@ const TeamSec = () => {
                     </Typography>
                     <Typography
                       variant="subtitle1"
-                      className="text-primary font-extrabold"
+                      className="font-extrabold text-primary"
                     >
                       {member.position}
                     </Typography>

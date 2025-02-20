@@ -78,7 +78,7 @@ import Testimonials from "../../components/Testimonials";
 const services = [
   {
     icon: Code,
-    title: "Web Development",
+    title: `Web Development`,
     description:
       "Build high-performance, responsive websites tailored to your business needs, providing seamless user experiences and secure platforms.",
     li1: "Custom Web Development",
@@ -92,7 +92,7 @@ const services = [
     icon: Smartphone,
     title: "Mobile App Development",
     description:
-      "Develop innovative, user-friendly mobile apps for iOS and Android that engage users and enhance your business presence on mobile platforms.",
+      "Develop innovative, user-friendly mobile apps for iOS and Android that engage users and enhance your business presence on mobile.",
     li1: "Custom Mobile App Development",
     li2: "Cross-Platform Development",
     li3: "App Maintenance & Updates",
@@ -116,7 +116,7 @@ const services = [
     icon: Megaphone,
     title: "Digital Marketing & SEO",
     description:
-      "Increase visibility, drive traffic, and improve rankings with targeted SEO strategies and digital marketing campaigns that bring high ROI.",
+      "Increase visibility, drive traffic, and improve rankings with targeted SEO strategies and digital marketing campaigns that bring high.",
     li1: "On-Page & Off-Page SEO",
     li2: "Local SEO",
     li3: "PPC Management (Google Ads)",
@@ -182,20 +182,20 @@ export default function ServicesPage() {
   };
 
   return (
-    <main className="bg-white">
-      <section className="relative h-[95vh] bg-white bg-[url('https://png.pngtree.com/thumb_back/fw800/background/20240328/pngtree-flat-lay-top-view-office-table-desk-image_15644935.jpg')] bg-center bg-cover">
-        <div className="absolute  bg-gray-100 w-[100%] h-[95vh] opacity-80"></div>
+    <main className="bg-gradient-primary">
+      <section className="relative h-[95vh] bg- bg-[url('https://png.pngtree.com/thumb_back/fw800/background/20240328/pngtree-flat-lay-top-view-office-table-desk-image_15644935.jpg')] bg-center bg-cover">
+        <div className="absolute  bg-gradient-primary w-[100%] h-[95vh] opacity-80"></div>
         <section className="relative pt-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-28">
+          <div className="px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8 md:py-28">
             <div className="text-center">
-              <span className="text-primary text-2xl font-bold tracking-wide uppercase">
+              <span className="text-2xl font-bold tracking-wide uppercase font-orbitron text-yellow">
                 Our Services
               </span>
-              <h1 className="mt-4 text-3xl md:text-6xl font-bold text-gray-900 mb-8">
+              <h1 className="mt-4 mb-8 text-3xl font-bold font-orbitron text-[#FFFFFF] md:text-6xl">
                 Transform{" "}
-                <span className="text-primary">Your Digital Presence</span>
+                <span className="text-yellow">Your Digital Presence</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+              <p className="max-w-3xl mx-auto mb-4 text-xl text-[#FFFFFF]">
                 At AAA Digital, we understand that every business has unique
                 needs. That's why we offer a wide range of tailored digital
                 services to help your business thrive online. From stunning
@@ -206,44 +206,47 @@ export default function ServicesPage() {
               <Button
                 variant="primary"
                 size="md"
-                className="group"
+                className="px-4 py-2 rounded-full group"
                 onClick={() => handleNavigation("/contact")}
               >
                 Let's Get Started
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </div>
-          {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div> */}
+          {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent"></div> */}
         </section>
       </section>
 
-      <section id="services" className="py-10 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section id="services" className="py-10 bg-gradient-primary ">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="p-6 rounded-xl bg-white border border-gray-200 hover:border-primary hover:shadow-lg transition duration-300"
+                className="p-6 transition duration-300 border border-gray-200 bg-primary rounded-xl hover:border-primary hover:shadow-lg"
               >
-                <service.icon className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="flex justify-center text-center ">
+                <service.icon className="w-12 h-12 mb-4 text-yellow" />
+                </div>
+                <h3 className="mb-2 text-xl font-semibold font-orbitron text-center text-[#FFFFFF]">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="leading-8 text-gray-200">{service.description}</p>
                 <button
-                  className="btn mt-4 pb-2"
+                  className="pb-2 mt-4 btn text-yellow"
                   onClick={() => handleNavigation(service.link)}
                 >
-                  <span className="text-primary font-semibold">See more</span>
+                  <span className="font-semibold text-yellow font-orbitron">See more</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     width="15px"
-                    className="pt-1"
+                    className="pt-1 text-[#FFFFFF]"
                   >
                     <path
+                    className="text-yellow"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeMiterlimit="10"
