@@ -22,7 +22,7 @@ export const Button: React.FC<ButtonProps> = ({
     secondary:
       'text-white bg-secondary border-2 border-secondary hover:bg-yellow hover:text-secondary',
     outline:
-      'text-primary border-2 border-primary hover:bg-primary hover:text-white',
+      'text-yellow border-2 border-yellow hover:border-2 hover:border-white hover:bg-secondary hover:text-white',
   };
 
   const sizes = {

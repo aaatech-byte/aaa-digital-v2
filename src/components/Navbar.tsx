@@ -2,12 +2,17 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
+interface NavLink {
+  name: string;
+  to: string;
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const navbarRef = useRef(null);
+  const navbarRef = useRef<HTMLDivElement>(null);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { name: "Home", to: "/" },
     { name: "About", to: "/about" },
     { name: "Services", to: "/services" },
@@ -17,8 +22,8 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
@@ -41,7 +46,7 @@ export default function Navbar() {
           <div className="flex items-center justify-center">
             <Link to="/">
               <span className="text-5xl font-bold cursor-pointer text-primary">
-                <img src={'icons/aaa_logo.png'} className="mt-2 h-auto w-14 object-cover" />
+                <img src={'/icons/aaa_logo.png'} className="mt-2 h-auto w-14 object-cover" />
               </span>
             </Link>
           </div>
