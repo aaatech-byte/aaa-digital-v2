@@ -169,13 +169,10 @@ export default function Blog() {
                       {post.title}
                     </h3>
                     <p className="text-gray-300 mb-4 font-sm">{post.excerpt}</p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="group px-2 py-2 font-bold font-orbitron"
+                    <Button variant="primary" size="md" className="group px-3 py-2 font-bold mt-4"
                       onClick={() => handleNavigation(post.link)}
                     >
-                      Read More
+                      Learn More
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/Button";
 
 interface Project {
   title: string;
+  subtitle: string;
   category: string;
   description: string;
   image: string;
@@ -15,12 +16,23 @@ interface Project {
   technologiesUsed: string;
 }
 
-const FeaturedWork: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+const truncateDescription = (text: string, wordLimit: number) => {
+  const words = text.split(" ");
+  return words.length > wordLimit
+    ? words.slice(0, wordLimit).join(" ") + " "
+    : text;
+};
 
-  const [initialProjects] = useState<Project[]>([
+const FeaturedWork: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("Web Development");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
+
+  const initialProjects: Project[] = [
     {
-      title: "E-Commerce Website for MountWorks Outdoors",
+      title: "E-Commerce Website for",
+      subtitle:"MountWorks Outdoors",
       category: "Web Development",
       description:
         "MountWorks Outdoors faced challenges with their sluggish and difficult-to-navigate online store, which led to a frustrating shopping experience for customers. Users found it hard to explore products and make purchases, resulting in lower engagement and sales.",
@@ -39,7 +51,8 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed: "Shopify, HTML5, CSS3, JavaScript",
     },
     {
-      title: "Corporate Website for Kinetic Systems",
+      title: "Corporate Website for",
+      subtitle:"Kinetic Systems",
       category: "Web Development",
       description:
         "Kinetic Systems struggled with a static website that failed to attract leads and engage visitors effectively. The lack of dynamic content and interactive elements meant potential clients were not engaging with the brand, leading to low conversions and missed opportunities.",
@@ -58,7 +71,8 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed: "WordPress, PHP, MySQL, Custom Theme",
     },
     {
-      title: "Portfolio Website for ArtHouse Collective",
+      title: "Portfolio Website for",
+      subtitle:"ArtHouse Collective",
       category: "Web Development",
       description:
         "ArtHouse Collective needed an online presence that could effectively showcase their creative work. Their previous portfolio lacked visibility and interactive features, resulting in low engagement and limited exposure for their unique projects.",
@@ -73,7 +87,8 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed: "React.js, Node.js, CSS3, JavaScript",
     },
     {
-      title: "On-Demand Delivery App for QuickDrop Logistics",
+      title: "On-Demand Delivery App for",
+      subtitle:"QuickDrop Logistics",
       category: "Mobile App Development",
       description:
         "QuickDrop Logistics faced challenges with managing and tracking deliveries effectively. The system was disorganized, resulting in delayed shipments and confusion for both customers and the logistics team.",
@@ -92,7 +107,8 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed: "React Native, Firebase, Google Maps API",
     },
     {
-      title: "Fitness App for MotionFit",
+      title: "Fitness App for",
+      subtitle:"MotionFit",
       category: "Mobile App Development",
       description:
         "MotionFit's existing fitness app lacked effective engagement tools, making it difficult for users to track their fitness progress and stay motivated. Users were leaving the app due to a lack of features that helped them achieve their goals.",
@@ -107,7 +123,8 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed: "Flutter, Dart, Firebase, REST APIs",
     },
     {
-      title: "Shopify Store for EchoCycle Sports",
+      title: "Shopify Store for",
+      subtitle:"EchoCycle Sports",
       category: "E-Commerce Solutions",
       description:
         "EchoCycle Sports faced challenges with their previous e-commerce store due to low conversion rates and a poor mobile shopping experience. Customers found it difficult to complete purchases, leading to abandoned carts and lost sales.",
@@ -125,7 +142,27 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed: "Shopify, Liquid, HTML5, CSS3, JavaScript",
     },
     {
-      title: "WooCommerce Store for UrbanRoots Apparel",
+      title: "Shopify Store for ",
+      subtitle:"EchoCycle Sports",
+      category: "Email Marketing & Automation",
+      description:
+        "EchoCycle Sports faced challenges with their previous e-commerce store due to low conversion rates and a poor mobile shopping experience. Customers found it difficult to complete purchases, leading to abandoned carts and lost sales.",
+      image:
+        "https://img.freepik.com/free-photo/showing-cart-trolley-shopping-online-sign-graphic_53876-133967.jpg",
+      features: [
+        "Mobile optimization",
+        "Integrated with inventory management",
+        "Streamlined order processing",
+      ],
+      challenge: "Low conversion rates and poor mobile shopping experience.",
+      solution:
+        "Designed and developed a custom Shopify store optimized for mobile devices, integrated with inventory management, and streamlined order processing.",
+      result: "Increased conversion rates and boosted sales.",
+      technologiesUsed: "Shopify, Liquid, HTML5, CSS3, JavaScript",
+    },
+    {
+      title: "WooCommerce Store for ",
+      subtitle:"UrbanRoots Apparel",
       category: "E-Commerce Solutions",
       description:
         "UrbanRoots Apparel was struggling with a poor user experience on their previous WooCommerce store. Customers found the site difficult to navigate and the checkout process slow, which led to frustration and lost sales.",
@@ -139,7 +176,8 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed: "WooCommerce, WordPress, PHP, MySQL",
     },
     {
-      title: "SEO Strategy for LuxeFit Wellness",
+      title: "SEO Strategy for",
+      subtitle:"LuxeFit Wellness",
       category: "Digital Marketing & SEO",
       description:
         "LuxeFit Wellness was facing issues with low visibility in search engine results, which made it difficult for potential clients to find their website. Despite offering great services, they were not getting enough organic traffic.",
@@ -154,7 +192,8 @@ const FeaturedWork: React.FC = () => {
         "Google Analytics, SEMrush, Yoast SEO, Google Search Console",
     },
     {
-      title: "PPC Campaign for GreenStar Farms",
+      title: "PPC Campaign for",
+      subtitle:"GreenStar Farms",
       category: "Digital Marketing & SEO",
       description:
         "GreenStar Farms was struggling with ineffective online advertising that resulted in low lead generation. Their existing campaigns weren’t optimized for their target audience, which made it difficult to generate quality leads.",
@@ -171,7 +210,8 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed: "Google Ads, Google Analytics, Keyword Research Tools",
     },
     {
-      title: "Instagram Campaign for PureVibe Supplements",
+      title: "Instagram Campaign for",
+      subtitle:"PureVibe Supplements",
       category: "Social Media Marketing",
       description:
         "PureVibe Supplements had minimal brand visibility on Instagram, which hindered their ability to connect with potential customers. The brand lacked a social media strategy that could drive engagement and promote their products effectively.",
@@ -186,7 +226,8 @@ const FeaturedWork: React.FC = () => {
         "Instagram Ads, Influencer Partnerships, Analytics Tools",
     },
     {
-      title: "Explainer Video for CleanTech Solutions",
+      title: "Explainer Video for",
+      subtitle:"CleanTech Solutions",
       category: "Video Marketing & Branding",
       description:
         "CleanTech Solutions was having trouble explaining their complex range of services to potential clients. Their website lacked clarity, which led to confusion and a low conversion rate.",
@@ -202,7 +243,8 @@ const FeaturedWork: React.FC = () => {
         "Adobe Premiere Pro, After Effects, Video Hosting Platforms",
     },
     {
-      title: "Promotional Video for UrbanVibes Clothing",
+      title: "Promotional Video for",
+      subtitle:"UrbanVibes Clothing",
       category: "Video Marketing & Branding",
       description:
         "UrbanVibes Clothing had low engagement on their social media platforms, particularly Instagram. Their marketing efforts lacked a dynamic approach to attracting followers and engaging with their audience.",
@@ -216,18 +258,18 @@ const FeaturedWork: React.FC = () => {
       technologiesUsed:
         "Adobe Premiere Pro, Final Cut Pro, Social Media Marketing",
     },
-  ]);
+  ];
 
   const categories = [
     "Web Development",
     "Mobile App Development",
     "E-Commerce Solutions",
+    "Custom Software Solutions",
     "Digital Marketing & SEO",
     "Social Media Marketing",
     "Video Marketing & Branding",
+    "Email Marketing & Automation",
   ];
-
-  const navigate = useNavigate();
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);
@@ -241,65 +283,168 @@ const FeaturedWork: React.FC = () => {
     navigate("/work");
   };
 
+  const handleCaseStudyClick = (project: Project) => {
+    setSelectedProject(project);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setSelectedProject(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <main className="bg-gradient-primary">
-      <section className="container max-7xl mx-auto p-4">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Featured <span className="text-yellow">Projects</span>
-          </h2>
-          <p className="text-xl text-white max-w-4xl mx-auto">
-            Take a look at our recent work, showcasing how we've helped businesses...
-          </p>
-        </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-2">
-          {categories.map((category) => (
-            <div
-              key={category}
-              className="bg-white rounded-2xl shadow-md p-1 sm:p-3 text-gray-500 hover:text-primary hover:font-bold font-semibold cursor-pointer hover:shadow-xl transition hover:scale-100 scale-95"
-              onClick={() => handleCategoryClick(category)}
-            >
-              <h2 className="text-xs sm:text-sm">{category}</h2>
-            </div>
-          ))}
-        </div>
+      <div className="text-center mb-8 px-4">
+        <h2 className=" text-2xl md:text-5xl font-orbitron font-semibold text-white mb-4">
+          Featured <span className="text-yellow">Projects</span>
+        </h2>
+        <p className="text-base sm:text-lg text-[#FFFFFF] max-w-3xl mx-auto">
+          Explore Our Success Stories: Transforming Businesses Through Innovative Strategies
+        </p>
+      </div>
 
-        <div className="mt-8 max-w-6xl mx-auto">
-          {selectedCategory && <h2 className="text-2xl text-yellow font-bold mb-4">{selectedCategory}</h2>}
+      <div className="flex flex-wrap justify-center items-center gap-2 px-4">
+        {categories.map((category) => (
+          <div
+            key={category}
+            className="bg-secondary rounded-2xl shadow-md p-1 sm:p-3 w-full sm:w-1/3 md:w-1/4 lg:w-1/5 text-center font-orbitron text-white hover:text-yellow hover:font-bold font-semibold cursor-pointer hover:shadow-xl transition hover:scale-100 scale-95"
+            onClick={() => handleCategoryClick(category)}
+          >
+            <h2 className="text-xs sm:text-sm">{category}</h2>
+          </div>
+        ))}
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" onClick={handleViewAllClick}>
+      <div className="mt-8 max-w-6xl mx-auto px-4">
+        {selectedCategory && <h2 className="text-2xl font-orbitron text-yellow font-bold mb-4">{selectedCategory}</h2>}
+      </div>
+
+      <section className=" bg-gradient-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {filteredProjects.map((project, index) => (
               <div
                 key={index}
-                className="rounded-xl overflow-hidden transition cursor-pointer scale-95 duration-300 hover:scale-100 hover:-translate-y-2"
+                className="relative rounded-xl overflow-hidden shadow-xl scale-95 hover:-translate-y-2 hover:shadow-2xl transition cursor-pointer"
+                onClick={() => handleCaseStudyClick(project)}
               >
-                <img src={project.image} alt={project.title} className="w-full rounded-2xl h-60" />
-                <div className="py-4">
-                  <span className="bg-gradient-to-br from-[#13072E] to-[#3D1794] px-3 py-1 text-xs text-white font-bold rounded-full uppercase">
-                    {project.category}
-                  </span>
-                  <h3 className="text-xl font-bold text-white mt-2 mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-1">{project.description}</p>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover hover:scale-105 duration-300 ease-in-out"
+                />
+                <div className="flex flex-col">
+                  <div className="p-6">
+                    <span
+                      className="bg-gradient-to-br from-[#13072E] to-[#3D1794] px-3 py-1 text-xs text-white font-bold rounded-full uppercase">
+                      {project.category}
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-50 my-3 font-orbitron">
+                      {project.title} <span className="text-yellow">{project.subtitle}</span>
+                    </h3>
+                    <p className="text-gray-200 my-3">
+                      {truncateDescription(project.description, 18)}
+                      <button
+                        className="text-black font-semibold"
+                        onClick={() => handleCaseStudyClick(project)}
+                      >
+                        <span className="text-gray-200 font-bold text-xl">
+                          ..... {" "}
+                        </span>
+                      </button>
+                    </p>
+                  </div>
+                  <div className="text-gray-50 text-sm font-medium sticky p-6 bottom-0 font-orbitron">
+                    Technologies:
+                    <br />
+                    <span className="text-gray-300 font-semibold">
+                      {project.technologiesUsed}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-
-          {selectedCategory && (
-            <div className="text-center mt-12">
-              <Button
-                variant="primary"
-                size="md"
-                className="group px-3 py-2 hover:border-2 border-white"
-                onClick={handleViewAllClick}
-              >
-                View All Projects
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform " />
-              </Button>
-            </div>
-          )}
         </div>
+      </section>
+
+      <section className="container max-7xl mx-auto p-4">
+        {selectedProject && (
+          <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4 z-50">
+            <div
+              ref={modalRef}
+              className="max-w-7xl w-full bg-white shadow-xl rounded-lg p-6"
+            >
+              <h3 className="text-2xl font-bold text-primary font-orbitron mb-3">
+                {selectedProject.title} <span className="text-yellow">{selectedProject.subtitle}</span>
+              </h3>
+              <p className="text-primary mb-4">{selectedProject.description}</p>
+              <ul className="text-left text-gray-800 space-y-2">
+                {selectedProject.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center font-orbitron text-sm text-primary">
+                    <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6">
+                <h4 className="font-bold text-primary font-orbitron">Challenge</h4>
+                <p className="text-primary">{selectedProject.challenge}</p>
+              </div>
+              <div className="mt-4">
+                <h4 className="font-bold text-primary font-orbitron">Solution</h4>
+                <p className="text-primary">{selectedProject.solution}</p>
+              </div>
+              <div className="mt-4">
+                <h4 className="font-bold text-primary font-orbitron">Result</h4>
+                <p className="text-primary">{selectedProject.result}</p>
+              </div>
+
+              <p className="text-gray-500 font-semibold mt-4">
+                <span className="font-bold text-primary font-orbitron">Technologies Used</span> <br />
+                {selectedProject.technologiesUsed}
+              </p>
+              <button
+                onClick={handleCloseModal}
+                className="mt-6 bg-primary text-white px-4 py-2 cursor-pointer rounded-md hover:bg-primary-dark transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+
+        {selectedCategory && (
+          <div className="text-center mt-6">
+            <Button
+              variant="primary"
+              size="md"
+              className="group px-3 py-2 hover:border-2 border-white"
+              onClick={handleViewAllClick}
+            >
+              View All Projects
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform " />
+            </Button>
+          </div>
+        )}
       </section>
     </main>
   );

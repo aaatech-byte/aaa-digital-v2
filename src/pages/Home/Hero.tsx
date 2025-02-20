@@ -11,29 +11,27 @@ export default function Hero() {
       <section className="relative h-[95vh] bg-white bg-[url('https://img.freepik.com/premium-photo/office-white-desk-laptop-accessories-top-view-free-space-your-text-flat-lay_187166-36073.jpg')] bg-cover bg-center">
         <div className="absolute z-10 bg-gradient-primary w-[100%] h-[100%] opacity-80"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-52 z-20">
-          <div className="text-center pt-24 sm:pt-0">
-            <span className="text-yellow text-2xl my-5 font-semibold  tracking-wide uppercase">
-              Your Partner in Digital Growth
+        <div className="relative max-w-6xl px-4 sm:px-6 lg:px-14 py-20 md:py-44 z-20">
+          <div className="pt-24 sm:pt-0">
+            <span className="text-[#F4D000] text-2xl my-5 font-semibold font-orbitron  tracking-wide uppercase">
+
             </span>
-            <h1 className="my-5 text-2xl md:text-4xl font-orbitron font-bold text-white">
-              Let’s Build
-              <span className=" text-yellow">
+            <h1 className="my-3 md:my-5 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-orbitron font-bold tracking-wide leading-6 text-white">
+              Let's Partner To <br />  Build Your <br />
+              <span className=" text-[#F4D000]">
                 {" "}
-                Something Extraordinary Together{" "}
+                Digital Brand{" "}
               </span>
             </h1>
-            <p className="text-base sm:textlg text-gray-300 my-5 pb-5 max-w-2xl mx-auto">
+            <p className="text-base sm:textlg text-[#FFFFFF] mt-11 md:mt-14 mb-4 md:mb-7 max-w-xl">
               We create stunning websites, build next-gen mobile apps, and
-              deliver custom software solutions to transform your business. With
-              data-driven digital marketing strategies, we help you connect,
-              engage, and grow in the digital age.
+              deliver custom software solutions to transform your business online.
             </p>
             {/* <div className="flex flex-col sm:flex-row justify-center gap-4"> */}
             <Link to="/contact">
-              <Button variant="primary" size="lg" className="group px-4 py-3 font-bold">
+              <Button variant="primary" size="md" className="group px-4 py-4 font-bold">
                 Get Your Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-3 h-7 w-7 bg-yellow text-black rounded-full p-1 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
