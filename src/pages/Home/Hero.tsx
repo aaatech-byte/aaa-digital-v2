@@ -9,9 +9,9 @@ export default function Hero() {
   return (
     <main className="bg-white">
       <section className="relative h-[95vh] bg-white bg-[url('https://img.freepik.com/premium-photo/office-white-desk-laptop-accessories-top-view-free-space-your-text-flat-lay_187166-36073.jpg')] bg-cover bg-center">
-        <div className="absolute  bg-primary w-[100%] h-[100%] opacity-80"></div>
+        <div className="absolute z-10 bg-gradient-primary w-[100%] h-[100%] opacity-80"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-52">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-52 z-20">
           <div className="text-center pt-24 sm:pt-0">
             <span className="text-yellow text-2xl my-5 font-semibold  tracking-wide uppercase">
               Your Partner in Digital Growth
@@ -38,6 +38,7 @@ export default function Hero() {
             </Link>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 opacity-80 bg-gradient-to-t from-primary to-transparent"></div>
       </section>
     </main>
   );

@@ -62,6 +62,57 @@ const ContactForm: React.FC = () => {
             <button onClick={() => setModalMessage(null)} className="px-6 py-2 text-black bg-white rounded-md hover:bg-gray-200">
               OK
             </button>
+
+    <section className=" py-7 flex items-center justify-center">
+      <div className="min-w-6xl px-4 sm:px-6 lg:px-8 w-full">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <span className="text-primary">Ready to Boost </span>Your Business
+          </h2>
+
+          {/* <p className="mt-4 text-xl text-gray-600"> */}
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mt-5">
+            Contact us for tailored IT solutions to enhance your digital
+            presence, optimize performance, or craft a winning strategy. 
+          </p>
+        </div>
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="contact"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Contact
+              </label>
+              <input
+                type="text"
+                name="contact"
+                id="contact"
+                value={formData.contact}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
+              />
+            </div>
+
           </div>
         </div>
       )}
