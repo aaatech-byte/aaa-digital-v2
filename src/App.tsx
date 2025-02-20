@@ -27,6 +27,7 @@ import Blog3 from "./pages/Blog/NumberOfBlogs/Blog3";
 import Blog4 from "./pages/Blog/NumberOfBlogs/Blog4";
 import Blog5 from "./pages/Blog/NumberOfBlogs/Blog5";
 import Blog6 from "./pages/Blog/NumberOfBlogs/Blog6";
+import JobApplicationForm from "./pages/Carrers/Form";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/job-application" element={<JobApplicationForm />} />
 
           <Route path="/blog" element={<Blog />} />
 
