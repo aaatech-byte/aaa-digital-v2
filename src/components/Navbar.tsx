@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 interface NavLink {
@@ -57,8 +57,8 @@ export default function Navbar() {
                 key={link.name}
                 to={link.to}
                 className={`${location.pathname === link.to
-                  ? "text-[#F4D000] font-semibold font-orbitron "
-                  : "text-[#FFFFFF] font-semibold font-orbitron"
+                  ? "text-yellow font-semibold font-orbitron "
+                  : "text-white font-semibold font-orbitron"
                   } hover:-translate-y-1 duration-200 ease-linear hover:text-[#F4D000] transition`}
               >
                 {link.name}
@@ -92,21 +92,23 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-gray-700"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ?
+              <X size={24} color="white" /> : <img src="icons/hemburger-menu.png" className="w-14" alt="" />
+            }
           </button>
         </div>
       </div>
 
       {isOpen && (
         <div ref={navbarRef} className="md:hidden border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
+          <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.to}
                 className={`${location.pathname === link.to
-                  ? "text-primary font-semibold"
-                  : "text-gray-700 font-semibold"
+                  ? "text-yellow font-semibold"
+                  : "text-white font-semibold"
                   } block px-3 py-2 hover:-translate-y-0.5 duration-300 hover:text-black transition`}
               >
                 {link.name}
@@ -114,12 +116,12 @@ export default function Navbar() {
             ))}
             <div className="px-3 py-2">
               <Link to="/contact">
-              <button
-                type="submit"
-                className="flex  justify-center gap-2 items-center mx-auto shadow-xl text- bg-[#F4D000] backdrop-blur-md  isolation-auto text-black before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-primary hover:border-emerald-600 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2.5 overflow-hidden rounded-xl group font-semibold"
-              >
-                Get Started
-                {/* <svg
+                <button
+                  type="submit"
+                  className="flex  justify-center gap-2 items-center mx-auto shadow-xl text- bg-[#F4D000] backdrop-blur-md  isolation-auto text-black before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-left-full before:hover:left-0 before:rounded-full before:bg-[#FFFFFF] hover:text-primary hover:border-emerald-600 before:-z-10 before:aspect-square before:hover:scale-150 before:hover:duration-700 relative z-10 px-4 py-2.5 overflow-hidden rounded-xl group font-semibold"
+                >
+                  Get Started
+                  {/* <svg
                   className="w-8 h-8 justify-end group-hover:rotate-90 group-hover:bg-gray-200 ease-linear duration-300 rounded-full border border-gray-900 group-hover:border-none p-2 rotate-45 bg-yellow"
                   viewBox="0 0 16 19"
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +131,7 @@ export default function Navbar() {
                     className="fill-gray-900 group-hover:fill-yellow"
                   />
                 </svg> */}
-              </button>
+                </button>
               </Link>
             </div>
           </div>

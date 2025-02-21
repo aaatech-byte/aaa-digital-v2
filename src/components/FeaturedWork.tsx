@@ -19,7 +19,7 @@ interface Project {
 const truncateDescription = (text: string, wordLimit: number) => {
   const words = text.split(" ");
   return words.length > wordLimit
-    ? words.slice(0, wordLimit).join(" ") + " "
+    ? words.slice(0, wordLimit).join(" ") + "..."
     : text;
 };
 
@@ -32,7 +32,7 @@ const FeaturedWork: React.FC = () => {
   const initialProjects: Project[] = [
     {
       title: "E-Commerce Website for",
-      subtitle:"MountWorks Outdoors",
+      subtitle: "MountWorks Outdoors",
       category: "Web Development",
       description:
         "MountWorks Outdoors faced challenges with their sluggish and difficult-to-navigate online store, which led to a frustrating shopping experience for customers. Users found it hard to explore products and make purchases, resulting in lower engagement and sales.",
@@ -52,7 +52,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "Corporate Website for",
-      subtitle:"Kinetic Systems",
+      subtitle: "Kinetic Systems",
       category: "Web Development",
       description:
         "Kinetic Systems struggled with a static website that failed to attract leads and engage visitors effectively. The lack of dynamic content and interactive elements meant potential clients were not engaging with the brand, leading to low conversions and missed opportunities.",
@@ -72,7 +72,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "Portfolio Website for",
-      subtitle:"ArtHouse Collective",
+      subtitle: "ArtHouse Collective",
       category: "Web Development",
       description:
         "ArtHouse Collective needed an online presence that could effectively showcase their creative work. Their previous portfolio lacked visibility and interactive features, resulting in low engagement and limited exposure for their unique projects.",
@@ -88,7 +88,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "On-Demand Delivery App for",
-      subtitle:"QuickDrop Logistics",
+      subtitle: "QuickDrop Logistics",
       category: "Mobile App Development",
       description:
         "QuickDrop Logistics faced challenges with managing and tracking deliveries effectively. The system was disorganized, resulting in delayed shipments and confusion for both customers and the logistics team.",
@@ -108,7 +108,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "Fitness App for",
-      subtitle:"MotionFit",
+      subtitle: "MotionFit",
       category: "Mobile App Development",
       description:
         "MotionFit's existing fitness app lacked effective engagement tools, making it difficult for users to track their fitness progress and stay motivated. Users were leaving the app due to a lack of features that helped them achieve their goals.",
@@ -124,7 +124,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "Shopify Store for",
-      subtitle:"EchoCycle Sports",
+      subtitle: "EchoCycle Sports",
       category: "E-Commerce Solutions",
       description:
         "EchoCycle Sports faced challenges with their previous e-commerce store due to low conversion rates and a poor mobile shopping experience. Customers found it difficult to complete purchases, leading to abandoned carts and lost sales.",
@@ -143,7 +143,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "Shopify Store for ",
-      subtitle:"EchoCycle Sports",
+      subtitle: "EchoCycle Sports",
       category: "Email Marketing & Automation",
       description:
         "EchoCycle Sports faced challenges with their previous e-commerce store due to low conversion rates and a poor mobile shopping experience. Customers found it difficult to complete purchases, leading to abandoned carts and lost sales.",
@@ -162,7 +162,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "WooCommerce Store for ",
-      subtitle:"UrbanRoots Apparel",
+      subtitle: "UrbanRoots Apparel",
       category: "E-Commerce Solutions",
       description:
         "UrbanRoots Apparel was struggling with a poor user experience on their previous WooCommerce store. Customers found the site difficult to navigate and the checkout process slow, which led to frustration and lost sales.",
@@ -177,7 +177,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "SEO Strategy for",
-      subtitle:"LuxeFit Wellness",
+      subtitle: "LuxeFit Wellness",
       category: "Digital Marketing & SEO",
       description:
         "LuxeFit Wellness was facing issues with low visibility in search engine results, which made it difficult for potential clients to find their website. Despite offering great services, they were not getting enough organic traffic.",
@@ -193,7 +193,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "PPC Campaign for",
-      subtitle:"GreenStar Farms",
+      subtitle: "GreenStar Farms",
       category: "Digital Marketing & SEO",
       description:
         "GreenStar Farms was struggling with ineffective online advertising that resulted in low lead generation. Their existing campaigns weren’t optimized for their target audience, which made it difficult to generate quality leads.",
@@ -211,7 +211,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "Instagram Campaign for",
-      subtitle:"PureVibe Supplements",
+      subtitle: "PureVibe Supplements",
       category: "Social Media Marketing",
       description:
         "PureVibe Supplements had minimal brand visibility on Instagram, which hindered their ability to connect with potential customers. The brand lacked a social media strategy that could drive engagement and promote their products effectively.",
@@ -227,7 +227,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "Explainer Video for",
-      subtitle:"CleanTech Solutions",
+      subtitle: "CleanTech Solutions",
       category: "Video Marketing & Branding",
       description:
         "CleanTech Solutions was having trouble explaining their complex range of services to potential clients. Their website lacked clarity, which led to confusion and a low conversion rate.",
@@ -244,7 +244,7 @@ const FeaturedWork: React.FC = () => {
     },
     {
       title: "Promotional Video for",
-      subtitle:"UrbanVibes Clothing",
+      subtitle: "UrbanVibes Clothing",
       category: "Video Marketing & Branding",
       description:
         "UrbanVibes Clothing had low engagement on their social media platforms, particularly Instagram. Their marketing efforts lacked a dynamic approach to attracting followers and engaging with their audience.",
@@ -360,13 +360,13 @@ const FeaturedWork: React.FC = () => {
                       {project.title} <span className="text-yellow">{project.subtitle}</span>
                     </h3>
                     <p className="text-gray-200 my-3">
-                      {truncateDescription(project.description, 18)}
+                      {truncateDescription(project.description, 20)}
                       <button
                         className="text-black font-semibold"
                         onClick={() => handleCaseStudyClick(project)}
                       >
                         <span className="text-gray-200 font-bold text-xl">
-                          ..... {" "}
+                          {" "}
                         </span>
                       </button>
                     </p>

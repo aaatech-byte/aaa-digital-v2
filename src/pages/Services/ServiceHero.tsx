@@ -18,34 +18,36 @@ export default function ServiceHero({
     window.scrollTo(0, 0);
   };
   return (
-    // <div className="relative bg-gradient-to-br from-gray-50 to-green-50 pt-20">
+    // <div className="relative pt-20 bg-gradient-to-br from-gray-50 to-green-50">
 
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 z-20 relative">
+    <div className="relative z-20 px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8 md:py-32">
       <div className="text-center">
-        <span className="text-primary text-xl font-semibold tracking-wide uppercase">
+        <span className="text-xl font-bold tracking-wide uppercase text-yellow font-orbitron">
           {title}
         </span>
-        <h1 className="py-2 text-xl md:text-3xl font-bold text-gray-200 ">
+        <h1 className="py-2 text-xl font-bold md:text-3xl font-orbitron text-yellow">
           {subtitle}
         </h1>
-        <p className="text-gray-300 mb-2 text-base py-2 max-w-3xl mx-auto">
+        <p className="max-w-3xl py-2 mx-auto mb-2 text-base text-[#FFFFFF]">
           {description}
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-3 pt-3">
+        <div className="flex flex-col justify-center gap-3 pt-3 sm:flex-row">
           <Button
             onClick={() => handleNavigation("/contact")}
             variant="outline"
             size="md"
+            className="px-4 py-2 rounded-full text-[#FFFFFF]"
           >
             Get Started
           </Button>
-          <Button variant="outline" size="md">
+          <Button variant="outline" className="text-[#FFFFFF] px-4 py-2 rounded-full" size="md">
             View Portfolio
           </Button>
         </div>
       </div>
+       {/* <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent"></div> */}
+
     </div>
-    // <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent"></div>
     // </div>
   );
 }

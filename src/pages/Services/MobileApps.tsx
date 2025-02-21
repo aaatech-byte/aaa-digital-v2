@@ -60,12 +60,12 @@ const process = [
 
 export default function MobileApps() {
   return (
-    <main className="bg-white">
+    <main className="bg-gradient-primary">
       <div
         className="bg-[url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]
-            relative h-[94vh] bg-cover bg-center pt-20 "
+            relative h-[94vh] bg-cover bg-center pt-16 "
       >
-        <div className="absolute bg-[#434343] z-10 w-[100%] h-[88%] opacity-80"></div>
+        <div className="absolute bg-gradient-primary z-10 w-[100%] h-[91%] opacity-80"></div>
         {/* <div className="relative h-[90vh]  pt-20 bg-[url('https://thumbs.wbm.im/pw/medium/34950f1f017647cd3f8484485b040686.avif')] bg-cover bg-center"> */}
         <ServiceHero
           title="Mobile App Development"
@@ -75,18 +75,20 @@ export default function MobileApps() {
       </div>
 
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-6 rounded-xl bg-white border border-gray-200 hover:border-primary hover:shadow-lg transition duration-300"
+                className="p-6 transition duration-300 border border-gray-200 bg-primary rounded-xl hover:border-primary hover:shadow-lg"
               >
-                <feature.icon className="h-12 w-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div className="flex items-center justify-center">
+                <feature.icon className="w-12 h-12 mb-4 text-yellow" />
+                </div>
+                <h3 className="mb-2 text-xl font-semibold text-center text-[#FFFFFF] font-orbitron">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-[#FFFFFF]">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -100,17 +102,17 @@ export default function MobileApps() {
           background: 'linear-gradient(356deg, rgba(11, 191, 139, 0.23), transparent)'
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">
-              Our <span className="text-primary">Technology Stack</span>
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-bold text-[#FFFFFF]">
+              Our <span className="text-yellow font-orbitron">Technology Stack</span>
             </h2>
-            <p className="mt-4 text-xl text-gray-600">
+            <p className="mt-4 text-xl text-[#FFFFFF]">
               We leverage the latest tools and frameworks to deliver
               high-quality, robust mobile applications.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             {[
               {
                 tech: "iOS (Swift)",
@@ -135,10 +137,10 @@ export default function MobileApps() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="py-4 px-6 text-center bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300"
+                className="px-6 py-4 text-center transition-shadow duration-300 rounded-lg shadow-sm bg-primary hover:shadow-lg"
               >
-                <p className="font-semibold text-xl text-primary">{item.tech}</p>
-                <p className="mt-4 text-gray-600 text-sm">{item.description}</p>
+                <p className="text-xl font-semibold text-yellow">{item.tech}</p>
+                <p className="mt-4 text-sm text-[#FFFFFF]">{item.description}</p>
               </div>
             ))}
           </div>
