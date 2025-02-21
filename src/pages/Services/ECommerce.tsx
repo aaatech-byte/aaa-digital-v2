@@ -1,3 +1,4 @@
+import React from 'react';
 import { ShoppingBag, Shield, Zap, BarChart } from 'lucide-react';
 import ServiceHero from './ServiceHero';
 import ProcessTimeline from '../../components/ProcessTimeline';
@@ -54,25 +55,24 @@ export default function ECommerce() {
   return (
     <main className="bg-white">
       <div className="bg-[url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]
-           relative h-[94vh] bg-cover bg-center pt-16 ">
-             <div className="absolute bg-primary z-10 w-[100%] h-[91%] opacity-80"></div>
+           relative h-[94vh] bg-cover bg-center pt-20 ">
+             <div className="absolute bg-[#434343] z-10 w-[100%] h-[88%] opacity-80"></div>
            {/* <div className="relative h-[90vh]  pt-20 bg-[url('https://thumbs.wbm.im/pw/medium/34950f1f017647cd3f8484485b040686.avif')] bg-cover bg-center"> */}
            <ServiceHero 
              title="E-Commerce Solutions"
              subtitle="Scalable E-Commerce Solutions for Seamless Shopping Experiences"
              description="Maximize your online sales with custom e-commerce platforms designed to deliver a seamless shopping experience and boost conversions. From secure payment integrations to powerful product management systems, we provide end-to-end solutions."
              />
-                     <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent"></div>
              </div>
       
-      <section className="py-20 bg-gradient-primary ">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="p-5 text-center transition duration-300 ease-in-out border border-gray-200 cursor-pointer hover:border-none hover:scale-105 rounded-xl hover:shadow-lg">
-                <feature.icon className="w-12 h-12 mx-auto mb-4 text-yellow" />
-                <h3 className="mb-2 text-xl font-semibold text-white font-orbitron">{feature.title}</h3>
-                <p className="text-gray-200">{feature.description}</p>
+              <div key={index} className="p-6 rounded-xl bg-white border border-gray-200 hover:border-primary hover:shadow-lg transition duration-300">
+                <feature.icon className="h-12 w-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>

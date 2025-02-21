@@ -56,13 +56,8 @@ export default function WebDevelopment() {
   return (
     <main >
       <div className="bg-[url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]
-<<<<<<< HEAD
-      relative h-[94vh] bg-cover bg-center pt-16  ">
-        <div className="absolute bg-gradient-primary z-10 w-[100%] h-[91%] opacity-80"></div>
-=======
       relative h-[94vh] bg-cover bg-center pt-20  ">
         <div className="absolute bg-gradient-primary z-10 w-[100%] h-[90%] opacity-80"></div>
->>>>>>> 6a1d783cdfa43ab3058d7aae90b4559fc9ea526c
       {/* <div className="relative h-[90vh]  pt-20 bg-[url('https://thumbs.wbm.im/pw/medium/34950f1f017647cd3f8484485b040686.avif')] bg-cover bg-center"> */}
       <ServiceHero 
         title="Web Development"

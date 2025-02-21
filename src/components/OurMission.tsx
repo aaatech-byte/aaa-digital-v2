@@ -51,11 +51,11 @@ export default function App() {
         <div className="">
           <div className="relative max-w-7xl mx-auto py-24 md:py-36">
             <div className="relative text-center z-30">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold text-white">
+              <h1 className="text-3xl md:text-4xl font-orbitron font-bold text-white">
                 {heroData.title} 
                 <span className="text-yellow"> {heroData.subtitle}</span>
               </h1>
-              <p className="text-sm sm:text-base md:text-lg  text-gray-50 my-5 pb-5 max-w-3xl mx-auto">
+              <p className="text-base md:text-lg  text-gray-50 my-5 pb-5 max-w-3xl mx-auto">
                 {heroData.missionStatement}
               </p>
             </div>

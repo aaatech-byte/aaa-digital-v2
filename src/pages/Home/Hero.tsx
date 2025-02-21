@@ -23,10 +23,11 @@ export default function Hero() {
                 Digital Brand{" "}
               </span>
             </h1>
-            <p className="text-base sm:text-lg text-white mt-11 md:mt-14 mb-4 md:mb-7 max-w-2xl">
+            <p className="text-base sm:textlg text-[#FFFFFF] mt-11 md:mt-14 mb-4 md:mb-7 max-w-xl">
               We create stunning websites, build next-gen mobile apps, and
               deliver custom software solutions to transform your business online.
             </p>
+            {/* <div className="flex flex-col sm:flex-row justify-center gap-4"> */}
             <Link to="/contact">
               <Button variant="primary" size="md" className="group px-4 py-4 font-bold">
                 Get Your Free Consultation
