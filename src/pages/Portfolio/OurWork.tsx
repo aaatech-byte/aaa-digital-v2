@@ -291,12 +291,15 @@ export default function OurWork() {
     <main className="bg-gradient-primary">
       <section className="relative h-[95vh] bg-[url('https://png.pngtree.com/thumb_back/fh260/background/20230801/pngtree-top-tips-to-make-money-blogging-image_12958761.jpg')] bg-center bg-cover">
         <div className="absolute bg-primary z-10 w-full h-[95vh] opacity-80"></div>
-        <div className="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-22 md:py-24">
+        <div className="relative z-40 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-22 md:pt-36">
           <div className="text-center pt-32">
-            <h1 className="mt-4 text-2xl md:text-5xl font-bold text-white mb-6 font-orbitron">
-              Projects We've <span className="text-yellow">Delivered</span>
+            <h1 className="my-3 md:my-4 text-2xl sm:text-4xl md:text-5xl font-orbitron font-semibold tracking-wide leading-6 text-white">
+            Projects We've {" "}
+              <span className=" text-[#F4D000] text-2xl md:text-5xl">
+               Delivered
+              </span>
             </h1>
-            <p className="text-base sm:text-lg text-white mb-8 max-w-2xl py-2 mx-auto">
+            <p className="text-base sm:text-lg text-[#FFFFFF] mt-11 md:mt-12 mb-4 md:mb-7 mx-auto max-w-4xl">
               Explore our recent projects to discover how we've empowered
               businesses to achieve their digital goals, enhance their online
               presence, and drive long-term growth.
@@ -308,7 +311,7 @@ export default function OurWork() {
               onClick={() => navigate("/contact")}
             >
               Let's Get Started
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-3 h-7 w-7 bg-yellow text-black rounded-full p-1 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
@@ -411,7 +414,7 @@ export default function OurWork() {
       )}
 
       <Testimonials />
-      <OurMission />
+      {/* <OurMission /> */}
       <Stats />
       <ContactForm />
     </main>

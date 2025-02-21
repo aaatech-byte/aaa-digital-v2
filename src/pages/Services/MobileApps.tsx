@@ -63,9 +63,13 @@ export default function MobileApps() {
     <main className="bg-gradient-primary">
       <div
         className="bg-[url('https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]
-            relative h-[94vh] bg-cover bg-center pt-20 "
+            relative h-[94vh] bg-cover bg-center pt-16 "
       >
+<<<<<<< HEAD
+        <div className="absolute bg-gradient-primary z-10 w-[100%] h-[91%] opacity-80"></div>
+=======
         <div className="absolute bg-gradient-primary z-10 w-[100%] h-[88.5%] opacity-80"></div>
+>>>>>>> 6a1d783cdfa43ab3058d7aae90b4559fc9ea526c
         {/* <div className="relative h-[90vh]  pt-20 bg-[url('https://thumbs.wbm.im/pw/medium/34950f1f017647cd3f8484485b040686.avif')] bg-cover bg-center"> */}
         <ServiceHero
           title="Mobile App Development"
@@ -85,7 +89,11 @@ export default function MobileApps() {
                 <div className="flex items-center justify-center">
                 <feature.icon className="w-12 h-12 mb-4 text-yellow" />
                 </div>
+<<<<<<< HEAD
+                <h3 className="mb-2 text-xl font-semibold text-center text-[#FFFFFF] font-orbitron">
+=======
                 <h3 className="mb-2 text-xl font-semibold text-center text-yellow">
+>>>>>>> 6a1d783cdfa43ab3058d7aae90b4559fc9ea526c
                   {feature.title}
                 </h3>
                 <p className="text-[#FFFFFF]">{feature.description}</p>

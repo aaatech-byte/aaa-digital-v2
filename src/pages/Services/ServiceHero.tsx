@@ -28,7 +28,11 @@ export default function ServiceHero({
         <h1 className="py-2 text-xl font-bold md:text-3xl font-orbitron text-yellow">
           {subtitle}
         </h1>
+<<<<<<< HEAD
+        <p className="max-w-3xl py-2 mx-auto mb-2 text-base text-[#FFFFFF]">
+=======
         <p className="max-w-3xl py-2 mx-auto mb-2 text-base text-gray-300">
+>>>>>>> 6a1d783cdfa43ab3058d7aae90b4559fc9ea526c
           {description}
         </p>
         <div className="flex flex-col justify-center gap-3 pt-3 sm:flex-row">
@@ -45,8 +49,9 @@ export default function ServiceHero({
           </Button>
         </div>
       </div>
+       {/* <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent"></div> */}
+
     </div>
-    // <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent"></div>
     // </div>
   );
 }
