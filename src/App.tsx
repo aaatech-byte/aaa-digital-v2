@@ -21,20 +21,6 @@ import VideoMarketing from "./pages/Services/VideoMarketing";
 import EmailMarketing from "./pages/Services/EmailMarketing";
 
 import Blog from "./pages/Blog/Blog";
-<<<<<<< HEAD
-import Blog1 from "./pages/Blog/NumberOfBlogs/Blogs/Blog1";
-import Blog2 from "./pages/Blog/NumberOfBlogs/Blogs/Blog2";
-import Blog3 from "./pages/Blog/NumberOfBlogs/Blogs/Blog3";
-import Blog4 from "./pages/Blog/NumberOfBlogs/Blogs/Blog4";
-import Blog5 from "./pages/Blog/NumberOfBlogs/Blogs/Blog5";
-import Blog6 from "./pages/Blog/NumberOfBlogs/Blogs/Blog6";
-// import Blog1 from "./pages/Blog/NumberOfBlogs/Blog1";
-// import Blog2 from "./pages/Blog/NumberOfBlogs/Blog2";
-// import Blog3 from "./pages/Blog/NumberOfBlogs/Blog3";
-// import Blog4 from "./pages/Blog/NumberOfBlogs/Blog4";
-// import Blog5 from "./pages/Blog/NumberOfBlogs/Blog5";
-// import Blog6 from "./pages/Blog/NumberOfBlogs/Blog6";
-=======
 import Blog1 from "./pages/Blog/NumberOfBlogs/Blog1";
 import Blog2 from "./pages/Blog/NumberOfBlogs/Blog2";
 import Blog3 from "./pages/Blog/NumberOfBlogs/Blog3";
@@ -42,7 +28,6 @@ import Blog4 from "./pages/Blog/NumberOfBlogs/Blog4";
 import Blog5 from "./pages/Blog/NumberOfBlogs/Blog5";
 import Blog6 from "./pages/Blog/NumberOfBlogs/Blog6";
 import JobApplicationForm from "./pages/Carrers/Form";
->>>>>>> 6a1d783cdfa43ab3058d7aae90b4559fc9ea526c
 
 function App() {
   return (

@@ -114,25 +114,30 @@ export default function Blog() {
         <div className="absolute bg-primary w-[100%] h-[95vh] opacity-80"></div>
 
         <section className="relative pt-28">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:pt-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-22">
             <div className="text-center">
-              
-              <h1 className="my-3 md:my-4 text-2xl sm:text-4xl md:text-5xl font-orbitron font-semibold tracking-wide leading-6 text-white">
-              Case Studies &{" "}
-              <span className="text-yellow text-2xl md:text-5xl">Blogs</span>
-            </h1>
-            <p className="text-base sm:text-lg text-white mt-11 md:mt-12 mb-4 md:mb-7 mx-auto max-w-4xl">
-            Explore our blogs and case studies for insights on web and app development, digital marketing, and software solutions.
-            </p>
-            <Button
-              variant="primary"
-              size="md"
-              className="group px-4 py-3 font-bold"
-              onClick={() => navigate("/contact")}
-            >
-              Let's Get Started
-              <ArrowRight className="ml-3 h-7 w-7 bg-yellow text-black rounded-full p-1 group-hover:translate-x-1 transition-transform" />
-            </Button>
+              <span className="text-yellow text-xl font-orbitron md:text-2xl font-bold tracking-wide uppercase">
+                Blogs
+              </span>
+              <h1 className="mt-4 text-2xl md:text-5xl font-orbitron font-bold text-white mb-6">
+                Expert Insights &{" "}
+                <span className="text-yellow">Strategies</span>
+              </h1>
+              <p className="text-base text-gray-200 mb-4 max-w-2xl tracking-wide mx-auto">
+                Stay ahead of the curve with actionable tips, industry trends,
+                and proven strategies. From web development to digital
+                marketing, discover how to boost your business and drive
+                results.
+              </p>
+              <Button
+                variant="primary"
+                size="md"
+                className="group px-4 py-3 font-bold"
+                onClick={() => navigate("/contact")}
+              >
+                Let's Get Started
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
           </div>
         </section>
@@ -152,7 +157,7 @@ export default function Blog() {
                     src={post.image}
                     alt={post.title}
                     className="w-full h-48 object-cover"
-                  />  
+                  />
                   <div className="p-4">
                     <div className="flex items-center text-sm text-gray-300 mb-4">
                       <Calendar className="h-4 w-4 mr-2 text-yellow" />
