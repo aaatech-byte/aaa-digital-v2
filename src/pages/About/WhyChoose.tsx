@@ -9,7 +9,11 @@ const WhyChooseUs = () => {
         }}
       >
         <div className="px-4 mx-auto py-14 max-w-7xl sm:px-8">
+<<<<<<< HEAD
         <h1 className=" text-2xl md:text-5xl font-orbitron text-center font-semibold text-white mb-4">
+=======
+          <h1 className="mb-16 text-4xl font-bold text-[#FFFFFF] text-center font-orbitron">
+>>>>>>> 6a1d783cdfa43ab3058d7aae90b4559fc9ea526c
             Why <span className="text-yellow">Choose Us</span>
           </h1>
           <div className="flex flex-col items-center justify-between gap-12 md:flex-row md:gap-20">

@@ -151,6 +151,7 @@ export default function ServicesPage() {
 
   return (
     <main className="bg-gradient-primary">
+<<<<<<< HEAD
       <section className="relative h-[90vh] bg-[url('https://png.pngtree.com/thumb_back/fw800/background/20240328/pngtree-flat-lay-top-view-office-table-desk-image_15644935.jpg')] bg-cover bg-center">
         <div className="absolute z-10 w-[100%] h-[100%] bg-gradient-primary opacity-80"></div>
         <div className="relative z-30 px-4 py-20 mx-auto text-center max-w-7xl sm:px-6 lg:px-8 md:pt-60">
@@ -251,6 +252,53 @@ export default function ServicesPage() {
               >
                 <div className="flex justify-center text-center ">
                   <service.icon className="w-12 h-12 mb-4 text-yellow" />
+=======
+      <section className="relative h-[95vh] bg- bg-[url('https://png.pngtree.com/thumb_back/fw800/background/20240328/pngtree-flat-lay-top-view-office-table-desk-image_15644935.jpg')] bg-center bg-cover">
+        <div className="absolute  bg-gradient-primary w-[100%] h-[95vh] opacity-80"></div>
+        <section className="relative pt-20">
+          <div className="px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8 md:py-28">
+            <div className="text-center">
+              <span className="text-2xl font-bold tracking-wide uppercase font-orbitron text-yellow">
+                Our Services
+              </span>
+              <h1 className="mt-4 mb-8 text-3xl font-bold font-orbitron text-[#FFFFFF] md:text-6xl">
+                Transform{" "}
+                <span className="text-yellow">Your Digital Presence</span>
+              </h1>
+              <p className="max-w-3xl mx-auto mb-4 text-xl text-[#FFFFFF]">
+                At AAA Digital, we understand that every business has unique
+                needs. That's why we offer a wide range of tailored digital
+                services to help your business thrive online. From stunning
+                websites to powerful mobile apps, our solutions are designed to
+                drive growth, boost engagement, and increase conversions.
+              </p>
+
+              <Button
+                variant="primary"
+                size="md"
+                className="px-4 py-2 rounded-full group"
+                onClick={() => handleNavigation("/contact")}
+              >
+                Let's Get Started
+                <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </div>
+          {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent"></div> */}
+        </section>
+      </section>
+
+      <section id="services" className="py-10 bg-gradient-primary ">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="p-6 transition duration-300 border border-gray-200 bg-primary rounded-xl hover:border-primary hover:shadow-lg"
+              >
+                <div className="flex justify-center text-center ">
+                <service.icon className="w-12 h-12 mb-4 text-yellow" />
+>>>>>>> 6a1d783cdfa43ab3058d7aae90b4559fc9ea526c
                 </div>
                 <h3 className="mb-2 text-xl font-semibold font-orbitron text-center text-[#FFFFFF]">
                   {service.title}
@@ -269,7 +317,11 @@ export default function ServicesPage() {
                     className="pt-1 text-[#FFFFFF]"
                   >
                     <path
+<<<<<<< HEAD
                       className="text-yellow"
+=======
+                    className="text-yellow"
+>>>>>>> 6a1d783cdfa43ab3058d7aae90b4559fc9ea526c
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeMiterlimit="10"
